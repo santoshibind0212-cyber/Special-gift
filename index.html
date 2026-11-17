@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff1f7">
+<title>For Avantika · My Yeaboo</title>
+<style>
+:root{--pink:#f16b9d;--rose:#b83e72;--plum:#633655;--glass:#ffffffc9}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;padding:22px;display:grid;place-items:center;overflow-x:hidden;color:var(--plum);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 15% 10%,#ffdce9 0,transparent 37%),radial-gradient(ellipse at 90% 90%,#e8ddff 0,transparent 38%),linear-gradient(135deg,#fffaf2,#fff0f7 58%,#f4efff)}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:5}
+.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.stars i{position:absolute;font-style:normal;color:#e3b64d;animation:twinkle 2s ease-in-out infinite alternate}
+.stars i:nth-child(1){top:10%;left:9%;font-size:24px}
+.stars i:nth-child(2){top:15%;right:12%;animation-delay:.5s}
+.stars i:nth-child(3){bottom:12%;left:13%;font-size:22px;animation-delay:.8s}
+.stars i:nth-child(4){bottom:18%;right:9%;font-size:25px;animation-delay:1.1s}
+@keyframes twinkle{to{opacity:.2;transform:scale(.65) rotate(30deg)}}
+.wrap{width:min(100%,650px);position:relative;z-index:1}
+.card{padding:clamp(26px,6vw,52px);border:1px solid #fff;border-radius:30px;background:var(--glass);box-shadow:0 22px 80px #954d7928,inset 0 1px #fff;backdrop-filter:blur(16px);text-align:center;animation:arrive .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes arrive{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+.badge{width:76px;height:76px;margin:0 auto 15px;display:grid;place-items:center;border-radius:50%;font-size:38px;background:linear-gradient(145deg,#fff0be,#ffe0ec);box-shadow:0 8px 28px #df89ac4d;animation:glow 2.5s ease-in-out infinite alternate}
+@keyframes glow{to{box-shadow:0 0 30px #f182b288,0 8px 28px #df89ac4d;transform:translateY(-3px)}}
+.kicker{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:800;color:#9a71aa;margin:0 0 9px}
+h1,h2{font-family:Georgia,"Times New Roman",serif;color:var(--rose)}
+h1{font-size:clamp(2.8rem,11vw,5rem);line-height:.98;margin:0;text-shadow:0 3px #ffe0eb}
+h2{font-size:clamp(1.8rem,7vw,2.6rem);margin:6px 0 12px}
+.name{display:inline-block;background:linear-gradient(90deg,#d64780,#8d68cd,#e05c91);background-size:200%;background-clip:text;color:transparent;animation:shimmer 4s linear infinite}
+@keyframes shimmer{to{background-position:200% center}}
+.lead{font-family:Georgia,serif;font-size:clamp(1.08rem,4vw,1.28rem);line-height:1.65;margin:18px auto 8px;max-width:500px}
+.sub{line-height:1.65;color:#805f79;margin:10px auto 0;max-width:480px}
+.btn{min-height:50px;border:0;border-radius:999px;padding:13px 23px;margin-top:23px;background:linear-gradient(100deg,#ec6098,#9870d4);color:white;font-weight:800;font-size:1rem;box-shadow:0 9px 22px #c65c9860;cursor:pointer;transition:transform .18s,filter .18s}
+.btn:hover{transform:translateY(-2px);filter:saturate(1.15)}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid #6030aa;outline-offset:4px}
+.hidden{display:none!important}
+.progress{height:8px;border-radius:99px;background:#f7dfeb;overflow:hidden;margin:21px 0 23px}
+.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#f16b9d,#a581e8);border-radius:inherit;transition:width .45s ease}
+.q-count{font-size:.8rem;color:#9a7191;font-weight:700;letter-spacing:.08em}
+.question{font-family:Georgia,serif;font-size:clamp(1.45rem,6vw,2rem);line-height:1.25;margin:9px 0 20px}
+.answers{display:grid;gap:11px}
+.answer{width:100%;padding:14px 16px;border:1px solid #f2d4e2;border-radius:16px;background:#fff9fc;color:#65435d;font-size:1rem;line-height:1.4;cursor:pointer;text-align:left;transition:transform .15s,border-color .15s,background .15s}
+.answer:hover{transform:translateY(-2px);border-color:#e68bb0;background:#fff}
+.answer.chosen{border-color:#d95991;background:#ffedf5;box-shadow:0 0 0 3px #f9d5e4}
+.feedback{min-height:28px;margin:14px 0 0;color:#a94376;font-weight:700}
+.note{padding:17px;border-radius:17px;background:#fff5fa;border:1px solid #f7dbe8;line-height:1.75;margin-top:17px}
+.final-title{font-size:clamp(2.7rem,10vw,4.6rem);line-height:1.02;margin:0;color:#c04c83}
+.heartline{font-size:1.4rem;letter-spacing:.12em;margin:18px 0 0}
+.signature{font-family:Georgia,serif;font-style:italic;font-size:1.1rem;color:#865c7b;margin-top:20px}
+.small{font-size:.82rem;color:#9a7690}
+.float{position:fixed;z-index:4;bottom:-50px;pointer-events:none;animation:floatUp linear forwards}
+@keyframes floatUp{15%{opacity:.9}to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+@media(max-width:430px){body{padding:14px}.card{padding:27px 20px;border-radius:24px}.answer{padding:13px 14px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main class="wrap">
+  <section class="card" id="welcome">
+    <div class="badge" aria-hidden="true">👑</div>
+    <p class="kicker">A tiny love story, made just for you</p>
+    <h1>For <span class="name">Avantika</span></h1>
+    <p class="lead">My sweetest <strong>Yeaboo</strong>, will you take a little trip through the moments that made my heart choose you?</p>
+    <p class="sub">There are no wrong answers—just a few questions, a little magic, and one very special ending.</p>
+    <button class="btn" id="start">Start our little quiz 💌</button>
+    <p class="small">Best experienced with the sound of your own happy heart ✨</p>
+  </section>
+
+  <section class="card hidden" id="quiz" aria-live="polite">
+    <p class="kicker">A little quiz for my Yeaboo</p>
+    <div class="q-count" id="counter"></div>
+    <div class="progress"><span id="bar"></span></div>
+    <h2 class="question" id="question"></h2>
+    <div class="answers" id="answers"></div>
+    <p class="feedback" id="feedback"></p>
+  </section>
+
+  <section class="card hidden" id="finale">
+    <div class="badge" aria-hidden="true">👸🏻</div>
+    <p class="kicker">And the answer is...</p>
+    <h2 class="final-title">You are my<br>Princess, Avantika</h2>
+    <p class="lead">My Yeaboo, thank you for being in my life.</p>
+    <div class="note">My dearest Yeaboo, you came into my life and made my heart feel more than I knew it could. Thank you for the little moments, the smiles, the laughter, and all the memories that I keep close. With you, even an ordinary day can feel like something magical. I hope you always remember how precious you are to me. Today, the crown is yours—my beautiful Princess, Avantika. May life give you as much happiness as your presence has given me. 💖</div>
+    <p class="heartline" aria-label="Love and kisses">💗 💋 💞 😘 💖</p>
+    <p class="signature">With all my love, today and always,<br>your biggest admirer 💌</p>
+    <button class="btn" id="celebrate">Make it sparkle again ✨</button>
+  </section>
+</main>
+
+<script>
+const questions=[
+  {
+    q:"What do I love most about you?",
+    a:["Your beautiful smile 😊","Your kind heart 💗","Everything that makes you you ✨"],
+    reply:"Every part of you makes my days brighter."
+  },
+  {
+    q:"Which little moment with me is your favorite?",
+    a:["Our laughter together 😄","A sweet conversation 💌","Every moment we share 💞"],
+    reply:"I hope we get to make many more lovely memories."
+  },
+  {
+    q:"What happens to my heart when you smile?",
+    a:["It skips a beat 💓","It feels warm and happy ☀️","It falls for you all over again 😘"],
+    reply:"Your smile has a little magic of its own."
+  },
+  {
+    q:"If I could give you one thing today, what would it be?",
+    a:["A bouquet of roses 🌹","A day full of smiles 🌸","All the love in my heart 💖"],
+    reply:"You deserve every beautiful thing this world can offer."
+  },
+  {
+    q:"What nickname do I save for my favorite girl?",
+    a:["Yeaboo 🥰","Princess Avantika 👑","My sweetest love 💕"],
+    reply:"That’s right, Yeaboo—you’re one of a kind."
+  },
+  {
+    q:"What do I hope you always remember?",
+    a:["You are wonderful 🌷","You deserve to feel loved 💝","You make my life more special ✨"],
+    reply:"I hope you remember how precious you are to me."
+  }
+];
+
+let index=0;
+const welcome=document.querySelector("#welcome");
+const quiz=document.querySelector("#quiz");
+const finale=document.querySelector("#finale");
+
+function showQuestion(){
+  const item=questions[index];
+  document.querySelector("#counter").textContent=`QUESTION ${index+1} OF ${questions.length}`;
+  document.querySelector("#bar").style.width=`${index/questions.length*100}%`;
+  document.querySelector("#question").textContent=item.q;
+  document.querySelector("#feedback").textContent="";
+  const box=document.querySelector("#answers");
+  box.replaceChildren();
+
+  item.a.forEach(label=>{
+    const button=document.createElement("button");
+    button.className="answer";
+    button.textContent=label;
+    button.addEventListener("click",()=>{
+      [...box.children].forEach(answer=>answer.disabled=true);
+      button.classList.add("chosen");
+      document.querySelector("#feedback").textContent=item.reply;
+
+      setTimeout(()=>{
+        index++;
+        if(index<questions.length){
+          showQuestion();
+        }else{
+          quiz.classList.add("hidden");
+          finale.classList.remove("hidden");
+          document.querySelector("#bar").style.width="100%";
+          burst(220);
+          floatHearts(24);
+          finale.scrollIntoView({behavior:"smooth",block:"center"});
+        }
+      },950);
+    });
+    box.append(button);
+  });
+}
+
+document.querySelector("#start").addEventListener("click",()=>{
+  welcome.classList.add("hidden");
+  quiz.classList.remove("hidden");
+  showQuestion();
+  burst(90);
+});
+
+const canvas=document.querySelector("#fx");
+const ctx=canvas.getContext("2d");
+let bits=[],raf=0,dpr=1;
+const colors=["#f05b9b","#a277df","#ffd166","#76c9ba","#ff8e72","#e8a7d2"];
+
+function resize(){
+  dpr=Math.min(devicePixelRatio||1,2);
+  canvas.width=innerWidth*dpr;
+  canvas.height=innerHeight*dpr;
+  canvas.style.width=innerWidth+"px";
+  canvas.style.height=innerHeight+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+window.addEventListener("resize",resize,{passive:true});
+resize();
+
+function burst(count=160){
+  for(let i=0;i<count;i++){
+    const angle=Math.random()*Math.PI*2;
+    const speed=2+Math.random()*7;
+    bits.push({
+      x:innerWidth/2,y:innerHeight*.4,
+      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-2,
+      size:4+Math.random()*7,rot:Math.random()*6,
+      spin:(Math.random()-.5)*.2,color:colors[i%colors.length],
+      life:100+Math.random()*55
+    });
+  }
+  if(!raf)draw();
+}
+
+function draw(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  bits=bits.filter(piece=>piece.life>0&&piece.y<innerHeight+30);
+
+  for(const piece of bits){
+    piece.x+=piece.vx;
+    piece.y+=piece.vy;
+    piece.vy+=.12;
+    piece.vx*=.993;
+    piece.rot+=piece.spin;
+    piece.life--;
+
+    ctx.save();
+    ctx.translate(piece.x,piece.y);
+    ctx.rotate(piece.rot);
+    ctx.globalAlpha=Math.min(1,piece.life/20);
+    ctx.fillStyle=piece.color;
+    ctx.fillRect(-piece.size/2,-piece.size/3,piece.size,piece.size*.65);
+    ctx.restore();
+  }
+
+  if(bits.length){
+    raf=requestAnimationFrame(draw);
+  }else{
+    raf=0;
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+  }
+}
+
+function floatHearts(count=12){
+  for(let i=0;i<count;i++){
+    const heart=document.createElement("span");
+    heart.className="float";
+    heart.textContent=["💗","💖","💕","✨","💞"][i%5];
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=18+Math.random()*22+"px";
+    heart.style.animationDuration=5+Math.random()*4+"s";
+    document.body.append(heart);
+    heart.addEventListener("animationend",()=>heart.remove(),{once:true});
+  }
+}
+
+document.querySelector("#celebrate").addEventListener("click",()=>{
+  burst(220);
+  floatHearts(24);
+});
+</script>
+</body>
+</html>
